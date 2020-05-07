@@ -7,6 +7,7 @@
   <title>Student Grade Table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 </head>
 
@@ -28,21 +29,72 @@
     </div>
   </header>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Grade</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr></tr>
-      <tr></tr>
-      <tr></tr>
-    </tbody>
+  <main class="container">
 
-  </table>
+    <div class="row">
+      <table class="table table-striped col-9">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+        </tbody>
+      </table>
+
+      <form action="" class="col-3">
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </div>
+          <input type="text" id="name" name="name" placeholder="Name" class ="form-control">
+          </div>
+
+
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="far fa-list-alt"></i>
+            </span>
+          </div>
+          <input type="text" id="grade" name="grade" placeholder="Grade" class ="form-control">
+          </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-graduation-cap"></i>
+            </span>
+          </div>
+          <input type="text" id="course" name="course" placeholder="Course" class ="form-control">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-success">Add</button>
+        <button type="reset" class="btn btn-light btn-outline-secondary">Cancel</button>
+
+
+      </form>
+
+
+
+    </div>
+
+  </main>
 
 
 
