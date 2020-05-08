@@ -51,8 +51,6 @@ class GradeTable {
     row.appendChild(buttonCol);
 
     return row;
-
-
   }
 
 
