@@ -29,26 +29,38 @@ class GradeTable {
     var name = document.createElement("td");
     var course = document.createElement("td");
     var grade = document.createElement("td");
-    var buttonCol = document.createElement("td");
+
+    var operationsCol = document.createElement("td");
+    var updateButton = document.createElement("button");
+    var updateIcon = document.createElement("i")
     var deleteButton = document.createElement("button");
+    var deleteIcon = document.createElement("i")
 
-    deleteButton.classList.add("btn", "btn-danger");
 
+    updateButton.classList.add("fas", "fa-edit");
+    deleteButton.classList.add("fas", "fa-trash");
     name.textContent = data.name;
     course.textContent = data.course;
     grade.textContent = data.grade;
-    deleteButton.textContent = "Delete";
 
     deleteButton.addEventListener("click", function () {
       deleteGrade(data.id);
     })
 
-    buttonCol.appendChild(deleteButton);
+    updateButton.addEventListener("click", function () {
+      console.log("hi from the update button!");
+    })
+
+    updateButton.appendChild(updateIcon)
+    deleteButton.appendChild(deleteIcon);
+    operationsCol.appendChild(updateButton);
+    operationsCol.appendChild(deleteButton);
+
 
     row.appendChild(name);
     row.appendChild(course);
     row.appendChild(grade);
-    row.appendChild(buttonCol);
+    row.appendChild(operationsCol);
 
     return row;
   }

@@ -2,3 +2,18 @@ header {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+
+
+button.fas.fa-trash {
+  color:red;
+  background-color: transparent;
+  border:none;
+  outline: none;
+}
+
+button.fas.fa-edit {
+  color:lightskyblue;
+  background-color: transparent;
+  border:none;
+  outline: none;
+}
