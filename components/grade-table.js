@@ -31,13 +31,13 @@ class GradeTable {
     var grade = document.createElement("td");
 
     var operationsCol = document.createElement("td");
-    var updateButton = document.createElement("button");
-    var updateIcon = document.createElement("i")
+    var changeButton = document.createElement("button");
+    var changeIcon = document.createElement("i")
     var deleteButton = document.createElement("button");
     var deleteIcon = document.createElement("i")
 
 
-    updateButton.classList.add("fas", "fa-edit");
+    changeButton.classList.add("fas", "fa-edit");
     deleteButton.classList.add("fas", "fa-trash");
     name.textContent = data.name;
     course.textContent = data.course;
@@ -47,13 +47,13 @@ class GradeTable {
       deleteGrade(data.id);
     })
 
-    updateButton.addEventListener("click", function () {
-      console.log("hi from the update button!");
+    changeButton.addEventListener("click", function () {
+      console.log("hi from the change button!");
     })
 
-    updateButton.appendChild(updateIcon)
+    changeButton.appendChild(changeIcon)
     deleteButton.appendChild(deleteIcon);
-    operationsCol.appendChild(updateButton);
+    operationsCol.appendChild(changeButton);
     operationsCol.appendChild(deleteButton);
 
 
