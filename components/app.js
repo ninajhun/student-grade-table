@@ -78,7 +78,6 @@ class App {
   //DELETE GRADES
   deleteGrade(id) {
     var deleteID = ("https://sgt.lfzprototypes.com/api/grades/" + id)
-    console.log(deleteID);
 
     $.ajax({
       method: "DELETE",
@@ -140,9 +139,10 @@ updateForm(data){
   course.value = data.course;
 
   document.getElementById("form-header").textContent = "Update Grade"
-  document.getElementById("add-update-button").textContent = "Update"
+  var button = document.querySelector(".btn-success");
+  button.textContent = "Update";
+  button.setAttribute("id", "update");
 
-  // update form with data to change
 }
 
 
