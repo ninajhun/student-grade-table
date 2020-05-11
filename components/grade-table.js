@@ -27,7 +27,6 @@ class GradeTable {
     this.updateForm = updateForm;
   }
 
-
   renderGradeRow(data, deleteGrade, updateForm) {
     var row = document.createElement("tr");
     var name = document.createElement("td");

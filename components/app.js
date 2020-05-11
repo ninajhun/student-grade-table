@@ -131,7 +131,18 @@ handleUpdateGradeSuccess() {
 
 updateForm(data){
   console.log(data);
-// update form with data to change
+  var name = document.getElementById('name');
+  var grade = document.getElementById('grade');
+  var course = document.getElementById("course");
+
+  name.value = data.name;
+  grade.value = data.grade;
+  course.value = data.course;
+
+  document.getElementById("form-header").textContent = "Update Grade"
+  document.getElementById("add-update-button").textContent = "Update"
+
+  // update form with data to change
 }
 
 
