@@ -11,8 +11,10 @@ class App {
     this.deleteGrade = this.deleteGrade.bind(this);
     this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
     this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
+    this.updateGrade = this.updateGrade.bind(this);
+    this.handleUpdateGradeSuccess = this.handleUpdateGradeSuccess.bind(this);
+    this.handleUpdateGradeError = this.handleUpdateGradeError.bind(this)
   }
-
 
   //GET GRADES
   getGrades() {
@@ -97,9 +99,19 @@ class App {
     this.getGrades();
   }
 
-//CHANGE GRADE
-  changeGrade(id) {
+//UPDATE GRADE
+  updateGrade(id) {
+    console.log(id);
+    var updateID = ("https://sgt.lfzprototypes.com/api/grades/" + id)
+    console.log(updateID);
+  }
 
+  handleUpdateGradeError(error) {
+    console.error(error);
+  }
+
+  handleUpdateGradeSuccess() {
+    this.getGrades();
   }
 
 

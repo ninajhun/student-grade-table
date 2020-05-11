@@ -24,6 +24,10 @@ class GradeTable {
     this.deleteGrade = deleteGrade;
   }
 
+  onUpdateClick(updateGrade){
+    this.updateGrade = updateGrade;
+  }
+
   renderGradeRow(data, deleteGrade) {
     var row = document.createElement("tr");
     var name = document.createElement("td");
@@ -64,8 +68,4 @@ class GradeTable {
 
     return row;
   }
-
-
-
-
 }
