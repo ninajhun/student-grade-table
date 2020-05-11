@@ -101,12 +101,10 @@ class App {
 
   //UPDATE GRADE
   updateGrade(name, course, grade, id) {
-    var updateID = ("https://sgt.lfzprototypes.com/api/grades/" + id)
-
 
     $.ajax({
       method: "PATCH",
-      url: updateID,
+      url: "https://sgt.lfzprototypes.com/api/grades/" + id,
       data: {
         "name": name,
         "course": course,
@@ -137,6 +135,8 @@ updateForm(data){
   name.value = data.name;
   grade.value = data.grade;
   course.value = data.course;
+  this.gradeForm.gradeID = data.id
+
 
   document.getElementById("form-header").textContent = "Update Grade"
   var button = document.querySelector(".btn-success");
@@ -150,9 +150,8 @@ updateForm(data){
 //START
 start() {
   this.getGrades();
-  this.gradeForm.onSubmit(this.createGrade);
+  this.gradeForm.onSubmit(this.createGrade, this.updateGrade);
   this.gradeTable.onDeleteClick(this.deleteGrade);
-  // this.gradeTable.onUpdateClick(this.updateGrade);
   this.gradeTable.onUpdateClick(this.updateForm);
 }
 

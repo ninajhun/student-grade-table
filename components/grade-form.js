@@ -1,34 +1,37 @@
 class GradeForm {
-  constructor(formElement) {
+  constructor(formElement, gradeID) {
     this.formElement = formElement;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formElement.addEventListener("submit", this.handleSubmit);
+    this.gradeID = gradeID;
   }
 
-  onSubmit(createGrade) {
+  onSubmit(createGrade, updateGrade) {
     this.createGrade = createGrade;
+    this.updateGrade = updateGrade;
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("hi from handle submit")
 
     var formData = new FormData(event.target);
     var name = formData.get('name');
     var course = formData.get('course');
     var grade = formData.get('grade');
+    var id = formData.get('id');
 
     var button = document.querySelector(".btn-success");
     if (button.getAttribute("id") === "update"){
-      console.log("update");
+      this.updateGrade(name, grade, course, this.gradeID);
+      this.resetForm;
+
     }else {
-      console.log("add")
+      this.createGrade(name, course, grade);
+      event.target.reset();
     }
 
-    this.createGrade(name, course, grade);
-    event.target.reset();
-  }
 
+  }
 
 
  resetForm(){
