@@ -15,20 +15,20 @@ class GradeTable {
     }
 
       for (var i = 0; i < grades.length; i++) {
-        tbody.append(this.renderGradeRow(grades[i], this.deleteGrade) );
+        tbody.append(this.renderGradeRow(grades[i], this.deleteGrade, this.updateForm) );
       }
     }
-
 
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
   }
 
-  onUpdateClick(updateGrade){
-    this.updateGrade = updateGrade;
+  onUpdateClick(updateForm){
+    this.updateForm = updateForm;
   }
 
-  renderGradeRow(data, deleteGrade) {
+
+  renderGradeRow(data, deleteGrade, updateForm) {
     var row = document.createElement("tr");
     var name = document.createElement("td");
     var course = document.createElement("td");
@@ -53,18 +53,16 @@ class GradeTable {
 
     changeButton.addEventListener("click", function () {
       console.log("hi from the change button!");
+      updateForm(data);
     })
 
     changeButton.appendChild(changeIcon)
     deleteButton.appendChild(deleteIcon);
-    operationsCol.appendChild(changeButton);
-    operationsCol.appendChild(deleteButton);
+    operationsCol.append(changeButton, deleteButton);
 
 
-    row.appendChild(name);
-    row.appendChild(course);
-    row.appendChild(grade);
-    row.appendChild(operationsCol);
+    row.append(name, course, grade, operationsCol);
+
 
     return row;
   }
